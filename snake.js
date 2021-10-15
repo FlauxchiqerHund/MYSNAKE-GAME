@@ -67,12 +67,12 @@ class Snake {
     return (collideOnX && collideOnY) || (collideOnx2 && collideOny2);
   }
 
-  collide1(snake2) {
-    let collideOnX3 =
-      this.head.x <= snake2.head.x && snake2.head.x <= this.head.x;
-    let collideOnY3 =
-      this.head.y <= snake2.head.y && snake2.head.y <= this.head.y;
-    return collideOnX3 && collideOnY3;
+  collidesnake(snake2) {
+     let collidesOnX =
+      this.head.x <= snake2.head.x && snake2.head.x <= this.head.x + 22;
+    let collidesOnY =
+      this.head.y <= snake2.head.y && snake2.head.y <= this.head.y + 22;
+    return collidesOnX && collidesOnY;
   }
 
   addNewSegment() {
