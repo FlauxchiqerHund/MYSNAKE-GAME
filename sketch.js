@@ -6,7 +6,7 @@ let score1 = 0;
 let score2 = 0;
 let bg; // background
 let apple;
-let sc
+let sc;
 
 function preload() {
   bg = loadImage(
@@ -22,15 +22,15 @@ function setup() {
 }
 
 function draw() {
-  if(sc === true){
-    background("black")
-    fill("white")
-    textSize(40)
-    text("Welcome to Snake.", 100, 200)
-    textSize(25)
-    text("Keys for player 1 are W,A,S,D", 50, 250)
-    text("Keys for player 2 are Arrow Keys", 50, 300)
-} 
+  if (sc === true) {
+    background("black");
+    fill("white");
+    textSize(40);
+    text("Welcome to Snake.", 100, 200);
+    textSize(25);
+    text("Keys for player 1 are W,A,S,D", 50, 250);
+    text("Keys for player 2 are Arrow Keys", 50, 300);
+  }
   background(bg);
   //console.log(snake)
   if (gameOver) {
@@ -57,9 +57,9 @@ function draw() {
       text("draw", 20, 280);
     }
 
-     if(snake1.collide(snake2) || snake2.collide(snake1)) {
-       gameOver = true
-     }
+    if (snake1.collide(snake2) || snake2.collide(snake1)) {
+      gameOver = true;
+    }
 
     if (gameOver === true && score1 > score2) {
       textSize(20);
@@ -108,7 +108,8 @@ function draw() {
     gameOver = true;
   }
 
-  if (snake1.collide(snake2)) {
+   if (snake1.collidesnake(snake2) || snake2.collidesnake(snake1)) {
+    console.log("game over");
     gameOver = true;
   }
 }
@@ -161,3 +162,4 @@ function keyPressed() {
     score2 = 0;
   }
 }
+
